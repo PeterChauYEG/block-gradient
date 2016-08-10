@@ -9,16 +9,6 @@ import './BlocksContainer.css'
 import Block from './Block'
 
 class BlocksContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.moveCard = this.moveCard.bind(this)
-  }
-  
-  moveCard(dragIndex, hoverIndex) {
-    const { moveBlock } = this.props
-    moveBlock(dragIndex, hoverIndex)
-  }
-  
   render() {
     const { blocks } = this.props
     return (
@@ -27,10 +17,10 @@ class BlocksContainer extends Component {
           blocks.map((block, i) => {
             const { color } = block
             return <Block 
+              {...this.props}
               color={color} 
               i={i} 
               key={i} 
-              moveCard={this.moveCard}
             />
           })
         }

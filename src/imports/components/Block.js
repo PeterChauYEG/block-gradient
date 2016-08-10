@@ -6,24 +6,15 @@ import { flow } from 'lodash'
 // import styles
 import './Block.css'
 
-const styles = {
-  border: '1px dashed gray',
-  padding: '0.5rem 1rem',
-  marginBottom: '.5rem',
-  backgroundColor: 'white',
-  cursor: 'move'
-}
-
-const cardSource = {
+const blockSource = {
   beginDrag(props) {
     return {
-      id: props.id,
       index: props.i
     }
   }
 }
 
-const cardTarget = {
+const blockTarget = {
   hover(props, monitor, component) {
     const dragIndex = monitor.getItem().index
     const hoverIndex = props.i
@@ -60,7 +51,7 @@ const cardTarget = {
     }
 
     // Time to actually perform the action
-    props.moveCard(dragIndex, hoverIndex)
+    props.moveBlock(dragIndex, hoverIndex)
 
     // Note: we're mutating the monitor item here!
     // Generally it's better to avoid mutations,
@@ -74,21 +65,21 @@ export default class Block extends Component {
   render() {
     const { color, isDragging, connectDragSource, connectDropTarget } = this.props
     const style = { backgroundColor: color }
-    const opacity = isDragging ? 0 : 1
+    const opacity = isDragging ? 0.1 : 1
     
     return connectDragSource(connectDropTarget(
-      <div className="Block" style={{ ...styles, ...style, opacity }}>
+      <div className="Block" style={{ ...style, opacity }}>
       </div>
     ))
   }
 }
 
 export default flow(
-  DragSource('card', cardSource, (connect, monitor) => ({
+  DragSource('block', blockSource, (connect, monitor) => ({
     connectDragSource: connect.dragSource(),
     isDragging: monitor.isDragging()
   })),
-  DropTarget('card', cardTarget, connect => ({
+  DropTarget('block', blockTarget, connect => ({
     connectDropTarget: connect.dropTarget()
   }))
 )(Block)

@@ -1,4 +1,5 @@
 .Block {
   height: 100%;
   border: 1px dashed #000;
+  cursor: move;
 }
