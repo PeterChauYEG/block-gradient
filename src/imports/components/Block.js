@@ -66,26 +66,15 @@ export default class Block extends Component {
   constructor(props) {
     super(props) 
     this.handleChange = this.handleChange.bind(this)
-    // this.handleValidation = this.handleValidation(this)
   }
   
   handleChange(change) {
     const { editColor, i } = this.props
-    const newColor = change.color
+    const newColor = change.color.trim()
+
     editColor(i, newColor)
   }
-  
-  // handleValidation(change) {
-  //   console.log(change)
-  //   // const newColor = change.color.trim()
-  //   // const isHex = newColor.split('')
-    
-  //   // if (isHex.length !== 7 || isHex.length !== 4 || isHex[0] !== '#') {
-  //   //   return false
-  //   // }
-  //   return true
-  // }
-  
+
   render() {
     const { color, isDragging, connectDragSource, connectDropTarget } = this.props
     const style = { backgroundColor: color }
