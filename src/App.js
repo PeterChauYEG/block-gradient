@@ -1,22 +1,20 @@
-import React, {
-  Component
-}
-from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as actionCreators from './imports/actions'
 
-// import styles
-import './App.css'
+// import component
+import Main from './imports/components/Main'
 
-// import components
-import BlocksContainer from './imports/components/BlocksContainer'
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <BlocksContainer />
-      </div>
-    )
+function mapStateToProps(state) {
+  return {
+    blocks: state.blocks
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Main)
 
 export default App

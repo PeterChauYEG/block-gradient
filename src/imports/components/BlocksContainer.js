@@ -11,14 +11,7 @@ import Block from './Block'
 
 export default class BlocksContainer extends Component {
   render() {
-    const blocks = [{
-      color: '#777777'
-    }, {
-      color: '#555555'
-    }, {
-      color: '#222222'
-    }, ]
-
+    const { blocks } = this.props
     return (
       <div className="BlocksContainer">
         {
