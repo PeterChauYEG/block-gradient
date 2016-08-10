@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, {
+  Component
+}
+from 'react'
 
 // import styles
 import './App.css'
@@ -12,8 +15,8 @@ class App extends Component {
       <div className="App">
         <BlocksContainer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
