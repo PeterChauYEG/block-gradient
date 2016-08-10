@@ -1,7 +1,6 @@
-import React, {
-  Component
-}
-from 'react'
+import React, { Component } from 'react'
+import { DragDropContext } from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend'
 
 // import styles
 import './BlocksContainer.css'
@@ -9,7 +8,17 @@ import './BlocksContainer.css'
 // import component
 import Block from './Block'
 
-export default class BlocksContainer extends Component {
+class BlocksContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.moveCard = this.moveCard.bind(this)
+  }
+  
+  moveCard(dragIndex, hoverIndex) {
+    const { moveBlock } = this.props
+    moveBlock(dragIndex, hoverIndex)
+  }
+  
   render() {
     const { blocks } = this.props
     return (
@@ -21,6 +30,7 @@ export default class BlocksContainer extends Component {
               color={color} 
               i={i} 
               key={i} 
+              moveCard={this.moveCard}
             />
           })
         }
@@ -28,3 +38,5 @@ export default class BlocksContainer extends Component {
     )
   }
 }
+
+export default DragDropContext(HTML5Backend)(BlocksContainer)

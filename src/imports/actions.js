@@ -1,7 +1,8 @@
 // action creators
-export function moveBlock(i) {
+export function moveBlock(dragIndex, hoverIndex) {
   return {
     type: 'MOVE_BLOCK',
-    i,
+    dragIndex,
+    hoverIndex,
   }
 }

@@ -53,7 +53,7 @@ module.exports = {
     eqeqeq: ['warn', 'allow-null'],
     'guard-for-in': 'warn',
     'indent': ['error', 2],
-    'new-cap': ['warn', { newIsCap: true }],
+    'new-cap': ['warn', { "newIsCap": true, "capIsNew": false }],
     'new-parens': 'warn',
     'no-array-constructor': 'warn',
     'no-caller': 'warn',
