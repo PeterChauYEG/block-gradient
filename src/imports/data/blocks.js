@@ -1,15 +1,12 @@
 const blocks = [
   {
-    color: '#999999'
+    color: '#00E5DE'
   },
   {
-    color: '#777777'
+    color: '#6581D4'
   }, 
   {
-    color: '#555555'
-  }, 
-  {
-    color: '#222222'
+    color: '#1E1044'
   },
 ]
 

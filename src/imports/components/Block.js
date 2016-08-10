@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
 import { DragSource, DropTarget } from 'react-dnd'
 import { flow } from 'lodash'
+import { RIEInput } from 'riek'
 
 // import styles
 import './Block.css'
@@ -62,6 +63,29 @@ const blockTarget = {
 }
 
 export default class Block extends Component {
+  constructor(props) {
+    super(props) 
+    this.handleChange = this.handleChange.bind(this)
+    // this.handleValidation = this.handleValidation(this)
+  }
+  
+  handleChange(change) {
+    const { editColor, i } = this.props
+    const newColor = change.color
+    editColor(i, newColor)
+  }
+  
+  // handleValidation(change) {
+  //   console.log(change)
+  //   // const newColor = change.color.trim()
+  //   // const isHex = newColor.split('')
+    
+  //   // if (isHex.length !== 7 || isHex.length !== 4 || isHex[0] !== '#') {
+  //   //   return false
+  //   // }
+  //   return true
+  // }
+  
   render() {
     const { color, isDragging, connectDragSource, connectDropTarget } = this.props
     const style = { backgroundColor: color }
@@ -69,6 +93,13 @@ export default class Block extends Component {
     
     return connectDragSource(connectDropTarget(
       <div className="Block" style={{ ...style, opacity }}>
+        <RIEInput
+          value={color}
+          change={this.handleChange}
+          propName="color"
+          classEditing="editing"
+          className="input"
+        />
       </div>
     ))
   }

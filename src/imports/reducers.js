@@ -3,6 +3,13 @@ import update from 'react/lib/update'
 
 function blocks(state = [], action) {
   switch (action.type) {
+  case 'EDIT_COLOR':
+    const { i, newColor } = action
+    return [
+      ...state.splice(0, i),
+      { ...state[i], color: newColor },
+      ...state.splice(i + 1)
+    ]
   case 'MOVE_BLOCK': 
     const { dragIndex, hoverIndex } = action
     const dragBlock = state[dragIndex]
