@@ -1,8 +1,8 @@
 .BlocksContainer {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 25vw;
   height: 80vh;
-  border: 1px dashed #000;
+  border: 1px dashed #fff;
   padding: 8px;
 }

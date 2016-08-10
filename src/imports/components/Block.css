@@ -1,5 +1,10 @@
 .Block {
   height: 100%;
-  border: 1px dashed #000;
+  margin-bottom: 8px;
+  border: 1px dashed #fff;
   cursor: move;
+}
+
+.Block:last-child {
+  margin-bottom: 0
 }
