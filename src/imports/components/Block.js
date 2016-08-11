@@ -77,7 +77,9 @@ export default class Block extends Component {
 
   render() {
     const { color, isDragging, connectDragSource, connectDropTarget } = this.props
-    const style = { backgroundColor: color }
+    const style = {
+      backgroundColor: color
+    }
     const opacity = isDragging ? 0 : 1
 
     return connectDragSource(connectDropTarget(

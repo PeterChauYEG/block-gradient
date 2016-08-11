@@ -1,12 +1,17 @@
 import { combineReducers } from 'redux'
 import update from 'react/lib/update'
+import tinycolor from 'tinycolor2'
 
 function blocks(state = [], action) {
   switch (action.type) {
   case 'ADD_BLOCK':
+
+    // generate new color
+    const color = tinycolor(state[0].color).lighten(10).toHexString().toUpperCase()
+
     return [
       {
-        color: '#9cc2f4'
+        color,
       },
       ...state
     ]
@@ -21,14 +26,18 @@ function blocks(state = [], action) {
       ]
     }
 
+    // convert color to hex
+    const validColor = tinycolor(newColor).toHexString().toUpperCase()
+
     return [
       ...state.slice(0, i),
-      { ...state[i], color: newColor },
+      { ...state[i], color: validColor },
       ...state.slice(i + 1)
     ]
   case 'MOVE_BLOCK':
     const { dragIndex, hoverIndex } = action
     const dragBlock = state[dragIndex]
+
     return update(state, {
       $splice: [
         [dragIndex, 1],

@@ -4,5 +4,6 @@
   width: 25vw;
   height: 80vh;
   border: 1px dashed #fff;
+  outline: 1px dashed #000;
   padding: 8px;
 }
