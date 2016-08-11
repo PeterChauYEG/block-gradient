@@ -5,6 +5,15 @@ function blocks(state = [], action) {
   switch (action.type) {
   case 'EDIT_COLOR':
     const { i, newColor } = action
+    
+    // handle no color
+    if (newColor === '') {
+      return [
+        ...state.slice(0, i),
+        ...state.slice(i + 1)
+      ]      
+    }
+    
     return [
       ...state.slice(0, i),
       { ...state[i], color: newColor },

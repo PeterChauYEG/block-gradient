@@ -12,19 +12,35 @@ import BlocksContainer from './BlocksContainer'
 class Main extends Component {
   render() {
     const { blocks } = this.props
-    
+    let gradient
+
     // calculate gradient
-    const gradient = blocks.reduce((prev, current, i, array) => {
-      if (i < array.length - 1) {
-        return prev + current.color + ', '
-      }
-      return prev + current.color + ')'
-    }, 'linear-gradient(')
-    
+    if (blocks.length === 1) {
+      gradient = blocks[0].color
+    } else if (blocks.length === 0) {
+      gradient = '#16a9c7'
+    } else {
+      gradient = blocks.reduce((prev, current, i, array) => {
+        const { color } = current
+        const { length } = array
+
+        if (i === 0 && i === length - 1) {
+          return prev + color + ')'
+        } else if (i === 0) {
+          return prev + color
+        } else if (i < length - 1) {
+          return prev  + ', ' + color
+        } else {
+          return prev + ', ' + color + ')'
+        }
+
+      }, 'linear-gradient(')
+    }
+
     const style = {
       background: gradient
     }
-    
+
     return (
       <div className="Main" style={style}>
         <BlocksContainer {...this.props} />

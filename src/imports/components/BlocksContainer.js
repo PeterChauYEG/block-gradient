@@ -16,9 +16,6 @@ class BlocksContainer extends Component {
         {
           blocks.map((block, i) => {
             const { color } = block
-            if (color === '') {
-              return null
-            }
             return <Block 
               {...this.props}
               color={color} 
