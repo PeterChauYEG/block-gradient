@@ -7,7 +7,9 @@ function blocks(state = [], action) {
   case 'ADD_BLOCK':
 
     // generate new color
-    const color = tinycolor(state[0].color).lighten(10).toHexString().toUpperCase()
+    const color = state[0] ?
+      tinycolor(state[0].color).lighten(10).toHexString().toUpperCase() :
+      '16A9C7'
 
     return [
       {

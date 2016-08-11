@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { DragDropContext } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
+import { presets, TransitionMotion, spring } from 'react-motion'
 
 // import styles
 import './BlocksContainer.css'
@@ -15,23 +16,53 @@ class BlocksContainer extends Component {
     moveBlock: React.PropTypes.func.isRequired
   }
 
-  render() {
-    const { blocks, editColor, moveBlock } = this.props
-    return (
-      <div className="blocks-container">
-        {
-          blocks.map((block, i) => {
-            const { color } = block
-            return <Block
-              color={color}
-              editColor={editColor}
-              i={i}
-              key={i}
-              moveBlock={moveBlock}
-            />
-          })
+  getStyles() {
+    const { blocks } = this.props
+    return blocks.map((block, i) => {
+      const { color } = block
+      return {
+        data: {
+          color
+        },
+        key: i.toString(),
+        style: {
+          height: 100,
+          opacity: spring(1, presets.stiff)
         }
-      </div>
+      }
+    })
+  }
+
+  willLeave() {
+    return {
+      height: spring(0, presets.stiff),
+      opacity: spring(0, presets.stiff)
+    }
+  }
+
+  render() {
+    const { editColor, moveBlock } = this.props
+    return (
+      <TransitionMotion
+        styles={this.getStyles()}
+        willLeave={this.willLeave}
+      >
+        {styles =>
+          <div className="blocks-container">
+            {styles.map(({key, style: { height, opacity }, data: { color }}) => {
+              return <Block
+                opacity={opacity}
+                color={color}
+                editColor={editColor}
+                height={height}
+                i={Number(key)}
+                key={key}
+                moveBlock={moveBlock}
+              />
+            })}
+          </div>
+        }
+      </TransitionMotion>
     )
   }
 }
