@@ -1,4 +1,4 @@
-.Block {
+.block {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
   color: white;
 }
 
-.Block:last-child {
+.block:last-child {
   margin-bottom: 0
 }
 

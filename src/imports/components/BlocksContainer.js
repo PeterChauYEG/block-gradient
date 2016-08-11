@@ -12,15 +12,15 @@ class BlocksContainer extends Component {
   render() {
     const { blocks } = this.props
     return (
-      <div className="BlocksContainer">
+      <div className="blocks-container">
         {
           blocks.map((block, i) => {
             const { color } = block
-            return <Block 
+            return <Block
               {...this.props}
-              color={color} 
-              i={i} 
-              key={i} 
+              color={color}
+              i={i}
+              key={i}
             />
           })
         }

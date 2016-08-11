@@ -1,9 +1,15 @@
 // action creators
+export function addBlock() {
+  return {
+    type: 'ADD_BLOCK'
+  }
+}
+
 export function editColor(i, newColor) {
   return {
     type: 'EDIT_COLOR',
     i,
-    newColor,    
+    newColor,
   }
 }
 

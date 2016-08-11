@@ -64,10 +64,10 @@ const blockTarget = {
 
 export default class Block extends Component {
   constructor(props) {
-    super(props) 
+    super(props)
     this.handleChange = this.handleChange.bind(this)
   }
-  
+
   handleChange(change) {
     const { editColor, i } = this.props
     const newColor = change.color.trim()
@@ -79,9 +79,9 @@ export default class Block extends Component {
     const { color, isDragging, connectDragSource, connectDropTarget } = this.props
     const style = { backgroundColor: color }
     const opacity = isDragging ? 0 : 1
-    
+
     return connectDragSource(connectDropTarget(
-      <div className="Block" style={{ ...style, opacity }}>
+      <div className="block" style={{ ...style, opacity }}>
         <RIEInput
           value={color}
           change={this.handleChange}

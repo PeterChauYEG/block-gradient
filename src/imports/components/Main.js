@@ -1,17 +1,15 @@
-import React, {
-  Component
-}
-from 'react'
+import React, { Component } from 'react'
 
 // import styles
 import './Main.css'
 
 // import components
+import AddBlock from './AddBlock'
 import BlocksContainer from './BlocksContainer'
 
 class Main extends Component {
   render() {
-    const { blocks } = this.props
+    const { addBlock, blocks } = this.props
     let gradient
 
     // calculate gradient
@@ -42,8 +40,9 @@ class Main extends Component {
     }
 
     return (
-      <div className="Main" style={style}>
+      <div className="main" style={style}>
         <BlocksContainer {...this.props} />
+        <AddBlock addBlock={addBlock} />
       </div>
     )
   }
