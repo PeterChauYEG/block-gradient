@@ -9,7 +9,7 @@ export default class Gradient extends Component {
 
     return (
       <div className="gradient">
-        <h1 className="h1">{gradient}</h1>
+        <h1 className="h1">{gradient.split('').length === 7 ? '' : gradient}</h1>
       </div>
     )
   }
