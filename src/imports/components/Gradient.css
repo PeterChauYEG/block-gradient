@@ -1,0 +1,28 @@
+.gradient {
+  position: absolute;
+  bottom: 16px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 80vw;
+  max-height: 8vh;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.h1 {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #fff;
+  text-align: center;
+  font-size: 2.25vw;
+}
+
+@media screen and (min-width: 769px) {
+  .h1 {
+    font-size: 1.25vw;
+  }
+}

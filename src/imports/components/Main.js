@@ -6,6 +6,7 @@ import './Main.css'
 // import components
 import AddBlock from './AddBlock'
 import BlocksContainer from './BlocksContainer'
+import Gradient from './Gradient'
 
 class Main extends Component {
   render() {
@@ -42,6 +43,7 @@ class Main extends Component {
     return (
       <div className="main" style={style}>
         <BlocksContainer {...this.props} />
+        <Gradient gradient={gradient} />
         <AddBlock addBlock={addBlock} />
       </div>
     )
