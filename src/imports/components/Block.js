@@ -68,6 +68,16 @@ export default class Block extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  static propTypes = {
+    color: React.PropTypes.string.isRequired,
+    connectDragSource: React.PropTypes.func.isRequired,
+    connectDropTarget: React.PropTypes.func.isRequired,
+    editColor: React.PropTypes.func.isRequired,
+    i: React.PropTypes.number.isRequired,
+    isDragging: React.PropTypes.bool.isRequired,
+    moveBlock: React.PropTypes.func.isRequired
+  }
+
   handleChange(change) {
     const { editColor, i } = this.props
     const newColor = change.color.trim()

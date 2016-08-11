@@ -1,8 +1,8 @@
 .blocks-container {
   display: flex;
   flex-direction: column;
-  width: 25vw;
-  height: 80vh;
+  width: 20vw;
+  height: 75vh;
   border: 1px dashed #fff;
   outline: 1px dashed #000;
   padding: 8px;

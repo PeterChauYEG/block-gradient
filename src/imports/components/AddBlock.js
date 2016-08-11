@@ -4,6 +4,10 @@ import React, { Component } from 'react'
 import './AddBlock.css'
 
 export default class AddBlock extends Component {
+  static propTypes = {
+    addBlock: React.PropTypes.func.isRequired
+  }
+
   render() {
     const { addBlock } = this.props
 

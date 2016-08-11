@@ -4,6 +4,10 @@ import React, { Component } from 'react'
 import './Gradient.css'
 
 export default class Gradient extends Component {
+  static propTypes = {
+    gradient: React.PropTypes.string.isRequired
+  }
+
   render() {
     const { gradient } = this.props
 

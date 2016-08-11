@@ -9,18 +9,25 @@ import './BlocksContainer.css'
 import Block from './Block'
 
 class BlocksContainer extends Component {
+  static propTypes = {
+    blocks: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    editColor: React.PropTypes.func.isRequired,
+    moveBlock: React.PropTypes.func.isRequired
+  }
+
   render() {
-    const { blocks } = this.props
+    const { blocks, editColor, moveBlock } = this.props
     return (
       <div className="blocks-container">
         {
           blocks.map((block, i) => {
             const { color } = block
             return <Block
-              {...this.props}
               color={color}
+              editColor={editColor}
               i={i}
               key={i}
+              moveBlock={moveBlock}
             />
           })
         }

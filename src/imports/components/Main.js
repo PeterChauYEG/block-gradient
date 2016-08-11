@@ -10,7 +10,12 @@ import Gradient from './Gradient'
 
 class Main extends Component {
   render() {
-    const { addBlock, blocks } = this.props
+    const {
+      addBlock,
+      blocks,
+      editColor,
+      moveBlock
+    } = this.props
     let gradient
 
     // calculate gradient
@@ -42,7 +47,11 @@ class Main extends Component {
 
     return (
       <div className="main" style={style}>
-        <BlocksContainer {...this.props} />
+        <BlocksContainer
+          blocks={blocks}
+          editColor={editColor}
+          moveBlock={moveBlock}
+        />
         <Gradient gradient={gradient} />
         <AddBlock addBlock={addBlock} />
       </div>
