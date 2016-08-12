@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './Main.css'
 
 // import components
-import AddBlock from './AddBlock'
+import Controls from './Controls'
 import BlocksContainer from './BlocksContainer'
 import Gradient from './Gradient'
 
@@ -14,7 +14,8 @@ class Main extends Component {
       addBlock,
       blocks,
       editColor,
-      moveBlock
+      moveBlock,
+      removeBlock
     } = this.props
     let gradient
 
@@ -53,7 +54,7 @@ class Main extends Component {
           moveBlock={moveBlock}
         />
         <Gradient gradient={gradient} />
-        <AddBlock addBlock={addBlock} />
+        <Controls addBlock={addBlock} removeBlock={removeBlock} />
       </div>
     )
   }

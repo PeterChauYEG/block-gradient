@@ -46,6 +46,10 @@ function blocks(state = [], action) {
         [hoverIndex, 0, dragBlock]
       ]
     })
+  case 'REMOVE_BLOCK':
+    return [
+      ...state.slice(1)
+    ]
   default:
     return state
   }

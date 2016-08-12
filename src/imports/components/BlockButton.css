@@ -1,16 +1,14 @@
-.add-block {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
+.block-button {
+  display: flex;
   width: 10vw;
   height: 10vw;
 }
 
-.add-block:hover {
+.block-button:hover {
   cursor: pointer;
 }
 
-.add {
+.symbol {
   margin: auto;
   text-align: center;
   vertical-align: middle;
@@ -26,12 +24,12 @@
 }
 
 @media screen and (min-width: 769px) {
-  .add-block {
+  .block-button {
     width: 5vw;
     height: 5vw;
   }
 
-  .add {
+  .symbol {
     line-height: 5vw;
     font-size: 5vw;
   }

@@ -20,3 +20,9 @@ export function moveBlock(dragIndex, hoverIndex) {
     hoverIndex,
   }
 }
+
+export function removeBlock() {
+  return {
+    type: 'REMOVE_BLOCK'
+  }
+}
