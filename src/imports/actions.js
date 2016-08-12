@@ -6,6 +6,12 @@ export function addBlock(direction) {
   }
 }
 
+export function changeDirection() {
+  return {
+    type: 'CHANGE_DIRECTION'
+  }
+}
+
 export function editColor(i, newColor) {
   return {
     type: 'EDIT_COLOR',

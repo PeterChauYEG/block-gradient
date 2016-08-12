@@ -88,6 +88,13 @@ function blocks(state = [], action) {
 
 function controls(state = [], action) {
   switch(action.type) {
+  case 'CHANGE_DIRECTION':
+    const { direction: prevDirection } = state
+    const direction = prevDirection === 'top' ? 'bottom' : 'top'
+    return {
+      ...state,
+      direction,
+    }
   default:
     return state
   }

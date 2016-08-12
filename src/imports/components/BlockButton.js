@@ -14,7 +14,7 @@ export default class BlockButton extends Component {
 
     return (
       <div className="block-button" onClick={action}>
-        <h1 className="symbol">{symbol}</h1>
+        <i className={`${symbol} symbol`}></i>
       </div>
     )
   }

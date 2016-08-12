@@ -2,4 +2,10 @@
   position: absolute;
   bottom: 16px;
   right: 16px;
+  display: flex;
+}
+
+.direction-control {
+  display: flex;
+  align-items: center;
 }
