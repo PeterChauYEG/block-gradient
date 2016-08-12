@@ -13,8 +13,7 @@
   margin: auto;
   text-align: center;
   vertical-align: middle;
-  line-height: 10vw;
-  font-size: 10vw;
+  font-size: 2vmin !important;
   color: #fff;
   user-select: none;
   text-shadow:
@@ -31,7 +30,6 @@
   }
 
   .symbol {
-    line-height: 5vw;
-    font-size: 5vw;
+    font-size: 3vmin !important;
   }
 }

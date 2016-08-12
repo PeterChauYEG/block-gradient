@@ -19,7 +19,7 @@
   background-color: transparent;
   width: 100%;
   text-align: center;
-  font-size: 2vw;
+  font-size: 2vmin;
 }
 
 .editing:focus {
@@ -27,6 +27,7 @@
 }
 
 .input {
+  font-size: 2vmin;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
