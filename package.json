@@ -1,6 +1,7 @@
 {
   "name": "app",
   "version": "0.0.1",
+  "homepage": "/block-gradient",
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.3.7",
