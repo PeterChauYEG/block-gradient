@@ -5,10 +5,12 @@ import rootReducer from './reducers'
 
 // import default data
 import blocks from './data/blocks'
+import controls from './data/controls'
 
-// create object for default data 
+// create object for default data
 const defaultState = {
   blocks,
+  controls,
 }
 
 // enable redux devtools... can this be done with webpack?

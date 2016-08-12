@@ -1,7 +1,8 @@
 // action creators
-export function addBlock() {
+export function addBlock(direction) {
   return {
-    type: 'ADD_BLOCK'
+    type: 'ADD_BLOCK',
+    direction
   }
 }
 
@@ -21,8 +22,9 @@ export function moveBlock(dragIndex, hoverIndex) {
   }
 }
 
-export function removeBlock() {
+export function removeBlock(direction) {
   return {
-    type: 'REMOVE_BLOCK'
+    type: 'REMOVE_BLOCK',
+    direction
   }
 }

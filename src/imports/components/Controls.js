@@ -9,16 +9,24 @@ import BlockButton from './BlockButton'
 export default class Controls extends Component {
   static propTypes = {
     addBlock: React.PropTypes.func.isRequired,
+    direction: React.PropTypes.string.isRequired,
     removeBlock: React.PropTypes.func.isRequired
   }
 
   render() {
-    const { addBlock, removeBlock } = this.props
-
+    const { addBlock, direction, removeBlock } = this.props
     return (
       <div className="controls">
-        <BlockButton action={removeBlock} symbol='&#8209;' />
-        <BlockButton action={addBlock} symbol='+' />
+        {direction === 'top' ?
+          <div>
+            <BlockButton action={addBlock.bind(null, direction)} symbol='+' />
+            <BlockButton action={removeBlock.bind(null, direction)} symbol='&#8209;' />
+          </div> :
+          <div>
+            <BlockButton action={removeBlock.bind(null, direction)} symbol='&#8209;' />
+            <BlockButton action={addBlock.bind(null, direction)} symbol='+' />
+          </div>
+        }
       </div>
     )
   }

@@ -7,7 +7,8 @@ import Main from './imports/components/Main'
 
 function mapStateToProps(state) {
   return {
-    blocks: state.blocks
+    blocks: state.blocks,
+    controls: state.controls,
   }
 }
 

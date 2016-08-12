@@ -13,6 +13,7 @@ class Main extends Component {
     const {
       addBlock,
       blocks,
+      controls: { direction },
       editColor,
       moveBlock,
       removeBlock
@@ -54,7 +55,7 @@ class Main extends Component {
           moveBlock={moveBlock}
         />
         <Gradient gradient={gradient} />
-        <Controls addBlock={addBlock} removeBlock={removeBlock} />
+        <Controls addBlock={addBlock} direction={direction} removeBlock={removeBlock} />
       </div>
     )
   }
