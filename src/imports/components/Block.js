@@ -74,11 +74,8 @@ export default class Block extends Component {
     connectDropTarget: React.PropTypes.func.isRequired,
     editColor: React.PropTypes.func.isRequired,
     i: React.PropTypes.number.isRequired,
-    moveBlock: React.PropTypes.func.isRequired,
-    opacity: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.string
-    ]).isRequired
+    isDragging: React.PropTypes.bool.isRequired,
+    moveBlock: React.PropTypes.func.isRequired
   }
 
   handleChange(change) {
@@ -89,16 +86,14 @@ export default class Block extends Component {
   }
 
   render() {
-    const { color, height, connectDragSource, connectDropTarget, opacity } = this.props
-    const heightPercent = ((height / 100) * 100) + '%'
+    const { color, isDragging, connectDragSource, connectDropTarget } = this.props
     const style = {
-      backgroundColor: color,
-      height: heightPercent,
-      opacity,
+      backgroundColor: color
     }
+    const opacity = isDragging ? 0 : 1
 
     return connectDragSource(connectDropTarget(
-      <div className="block" style={style}>
+      <div className="block" style={{ ...style, opacity }}>
         <RIEInput
           value={color}
           change={this.handleChange}
