@@ -14,7 +14,7 @@ function blocks(state = [], action) {
     case 'top':
       // generate new color
       color = state[0] ?
-        tinycolor(state[0].color).lighten(10).toHexString().toUpperCase() :
+        tinycolor(state[0].color).lighten(5).toHexString().toUpperCase() :
         '#16A9C7'
 
       return [
@@ -27,7 +27,7 @@ function blocks(state = [], action) {
     case 'bottom':
       // generate new color
       color = length > 0 ?
-        tinycolor(state[length - 1].color).darken(10).toHexString().toUpperCase() :
+        tinycolor(state[length - 1].color).darken(5).toHexString().toUpperCase() :
         '#16A9C7'
 
       return [
