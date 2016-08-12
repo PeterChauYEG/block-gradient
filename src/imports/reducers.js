@@ -5,17 +5,18 @@ import tinycolor from 'tinycolor2'
 function blocks(state = [], action) {
   switch (action.type) {
   case 'ADD_BLOCK':
+    const length = state.length
 
     // generate new color
-    const color = state[0] ?
-      tinycolor(state[0].color).lighten(10).toHexString().toUpperCase() :
-      '16A9C7'
+    const color = length === 0 ?
+      '16A9C7' :
+      tinycolor(state[length-1].color).darken(10).toHexString().toUpperCase()
 
     return [
+      ...state,
       {
         color,
-      },
-      ...state
+      }
     ]
   case 'EDIT_COLOR':
     const { i, newColor } = action

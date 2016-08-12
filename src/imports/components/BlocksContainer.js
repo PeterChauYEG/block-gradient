@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { DragDropContext } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
-import { presets, TransitionMotion, spring } from 'react-motion'
+import { TransitionMotion, spring } from 'react-motion'
 
 // import styles
 import './BlocksContainer.css'
@@ -26,17 +26,24 @@ class BlocksContainer extends Component {
         },
         key: i.toString(),
         style: {
-          height: 100,
-          opacity: spring(1, presets.stiff)
+          height: spring(100),
+          opacity: spring(1)
         }
       }
     })
   }
 
+  willEnter() {
+    return {
+      height: 0,
+      opacity: 1,
+    }
+  }
+
   willLeave() {
     return {
-      height: spring(0, presets.stiff),
-      opacity: spring(0, presets.stiff)
+      height: spring(0),
+      opacity: spring(0)
     }
   }
 
@@ -45,6 +52,7 @@ class BlocksContainer extends Component {
     return (
       <TransitionMotion
         styles={this.getStyles()}
+        willEnter={this.willEnter}
         willLeave={this.willLeave}
       >
         {styles =>
