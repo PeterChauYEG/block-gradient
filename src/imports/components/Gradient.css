@@ -1,11 +1,11 @@
 .gradient {
   position: absolute;
-  bottom: 16px;
+  bottom: 8px;
   margin: 0 auto;
   left: 0;
   right: 0;
-  width: 80vw;
-  max-height: 8vh;
+  width: 60vw;
+  max-height: 10vh;
   vertical-align: middle;
   overflow: hidden;
 }
@@ -18,11 +18,11 @@
     1px 1px 0 #000;
   color: #fff;
   text-align: center;
-  font-size: 2.25vw;
+  font-size: 3vmin;
 }
 
 @media screen and (min-width: 769px) {
   .h1 {
-    font-size: 1.25vw;
+    font-size: 2vmin;
   }
 }

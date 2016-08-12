@@ -17,9 +17,9 @@
 .editing {
   border: none;
   background-color: transparent;
-  width: 100%;
+  width: 50%;
   text-align: center;
-  font-size: 2vmin;
+  font-size: 2.75vmin;
 }
 
 .editing:focus {
@@ -27,14 +27,23 @@
 }
 
 .input {
-  font-size: 2vmin;
+  font-size: 2.75vmin;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
   color: #fff;
-  width: 16vw;
   text-align: center;
   cursor: pointer
+}
+
+@media screen and (min-width: 769px) {
+  .editing {
+    font-size: 2vmin;
+  }
+
+  .input {
+    font-size: 2vmin;
+  }
 }

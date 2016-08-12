@@ -13,7 +13,7 @@
   margin: auto;
   text-align: center;
   vertical-align: middle;
-  font-size: 2vmin !important;
+  font-size: 3vmin !important;
   color: #fff;
   user-select: none;
   text-shadow:
@@ -30,6 +30,6 @@
   }
 
   .symbol {
-    font-size: 3vmin !important;
+    font-size: 2.5vmin !important;
   }
 }
