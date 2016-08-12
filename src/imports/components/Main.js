@@ -22,7 +22,7 @@ class Main extends Component {
     if (blocks.length === 1) {
       gradient = blocks[0].color
     } else if (blocks.length === 0) {
-      gradient = '#16a9c7'
+      gradient = '#16A9C7'
     } else {
       gradient = blocks.reduce((prev, current, i, array) => {
         const { color } = current
